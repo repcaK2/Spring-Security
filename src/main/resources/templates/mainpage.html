@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* Resetowanie stylów domyślnych */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Styl nagłówka */
+    header {
+      background-color: #3d98b7;
+      padding: 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav ul {
+      list-style-type: none;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 10px;
+      font-size: 25px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    /* Przyciski logowania */
+    .login-btn, .password-btn {
+      background-color: #fff;
+      color: #3d98b7;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin-left: 10px;
+      cursor: pointer;
+      height: 40px;
+      width: 130px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <ul>
+      <li><a href="#">Strona główna</a></li>
+      <li><a href="#">O nas</a></li>
+      <li><a href="#">Usługi</a></li>
+      <li><a href="#">Kontakt</a></li>
+    </ul>
+    <div>
+      <a href="/registerpage"><button class="login-btn">Register</button></a>
+      <a href="loginpage"><button class="password-btn">Login</button></a>
+    </div>
+  </nav>
+</header>
+</body>
+</html>

@@ -30,11 +30,16 @@ public class AuthenticationController {
     }
 
     @PostMapping("/authenticate")
-    public ResponseEntity<AuthenticationResponse> authenticate(
-            @RequestBody AuthenticationRequest request
-    ) {
-        return ResponseEntity.ok(service.authenticate(request));
-    }
+    public ResponseEntity<String> authenticate(@RequestParam("email") String email,
+                                               @RequestParam("password") String password) {
 
+        AuthenticationRequest request = new AuthenticationRequest();
+        request.setEmail(email);
+        request.setPassword(password);
+
+        service.authenticate(request);
+
+        return ResponseEntity.ok("Użytkownik został zalogowny");
+    }
 
 }

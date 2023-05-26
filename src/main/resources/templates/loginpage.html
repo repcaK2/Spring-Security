@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Page</title>
     <style>
-    body{
+        body{
       background-color: rgb(69, 150, 198);
     }
     .all{
@@ -58,7 +58,7 @@
       padding:16px 31px;
       text-decoration:none;
       text-shadow:0px 1px 0px #2f6627;
-      margin-left: 174px;
+      margin-left: 179px;
     }
     .myButton:hover {
       background-color:#ffffff;
@@ -72,26 +72,23 @@
     .back{
       color:white;
       margin-top:-36px;
-      margin-left:25px;
+      margin-left:55px;
       text-decoration: none;
     }
 
     .eks{
       text-decoration: none;
     }
-
-
-  </style>
+    </style>
 </head>
 <body>
 <div class="all">
     <div class="loginform">
-        <form action="/api/v1/auth/register" method="post"></br></br></br></br></br></br></br>
-            <input class="css-input" type="text" name="firstname" placeholder="name" required></br></br>
-            <input class="css-input" type="text" name="lastname" placeholder="lastname" required></br></br>
-            <input class="css-input" type="email" name="email" placeholder="e-mail" required></br></br>
-            <input class="css-input" type="password" name="password" placeholder="password" required></br></br>
-            <button class="myButton" type="submit">Zarejestruj</button>
+        <form action="/api/v1/auth/authenticate" method="POST">
+            </br></br></br></br></br></br></br></br></br></br>
+            <input class="css-input" type="email" id="email" name="email" required placeholder="email"></br></br>
+            <input class="css-input" type="password" id="password" name="password" required placeholder="password"></br></br>
+            <button class="myButton" type="submit">Login</button>
         </form>
         <a class="eks" href="mainpage"><h3 class="back">back</h3></a>
     </div>

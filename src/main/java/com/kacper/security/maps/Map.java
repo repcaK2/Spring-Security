@@ -10,4 +10,14 @@ public class Map {
     public String register(){
         return "registerpage";
     }
+
+    @GetMapping("/loginpage")
+    public String login(){
+        return "loginpage";
+    }
+
+    @GetMapping("/mainpage")
+    public String mainpage(){
+        return "mainpage";
+    }
 }
