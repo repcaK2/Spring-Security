@@ -12,7 +12,7 @@ public class AuthenticationController {
     private final AuthenticationService service;
 
     @PostMapping("/register")
-    public ResponseEntity<String> register(
+    public ResponseEntity<AuthenticationResponse> register(
             @RequestParam String firstname,
             @RequestParam String lastname,
             @RequestParam String email,
@@ -24,22 +24,18 @@ public class AuthenticationController {
         request.setEmail(email);
         request.setPassword(password);
 
-        service.register(request);
-
-        return ResponseEntity.ok("Użytkownik został zarejestrowany.");
+        return ResponseEntity.ok(service.register(request));
     }
 
     @PostMapping("/authenticate")
-    public ResponseEntity<String> authenticate(@RequestParam("email") String email,
+    public ResponseEntity<AuthenticationResponse> authenticate(@RequestParam("email") String email,
                                                @RequestParam("password") String password) {
 
         AuthenticationRequest request = new AuthenticationRequest();
         request.setEmail(email);
         request.setPassword(password);
 
-        service.authenticate(request);
-
-        return ResponseEntity.ok("Użytkownik został zalogowny");
+        return ResponseEntity.ok(service.authenticate(request));
     }
 
 }

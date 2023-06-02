@@ -20,4 +20,9 @@ public class Map {
     public String mainpage(){
         return "mainpage";
     }
+
+    @GetMapping("/contacts")
+    public String contacts(){
+        return "contacts";
+    }
 }
