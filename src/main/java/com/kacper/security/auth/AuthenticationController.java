@@ -2,7 +2,10 @@ package com.kacper.security.auth;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1/auth")
@@ -13,29 +16,16 @@ public class AuthenticationController {
 
     @PostMapping("/register")
     public ResponseEntity<AuthenticationResponse> register(
-            @RequestParam String firstname,
-            @RequestParam String lastname,
-            @RequestParam String email,
-            @RequestParam String password
+            @RequestBody RegisterRequest request
     ) {
-        RegisterRequest request = new RegisterRequest();
-        request.setFirstname(firstname);
-        request.setLastname(lastname);
-        request.setEmail(email);
-        request.setPassword(password);
-
         return ResponseEntity.ok(service.register(request));
     }
-
     @PostMapping("/authenticate")
-    public ResponseEntity<AuthenticationResponse> authenticate(@RequestParam("email") String email,
-                                               @RequestParam("password") String password) {
-
-        AuthenticationRequest request = new AuthenticationRequest();
-        request.setEmail(email);
-        request.setPassword(password);
-
+    public ResponseEntity<AuthenticationResponse> authenticate(
+            @RequestBody AuthenticationRequest request
+    ) {
         return ResponseEntity.ok(service.authenticate(request));
     }
+
 
 }
